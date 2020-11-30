@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Music Masters Online Shop</string>
+    <string name="tab_text_1">Strings</string>
+    <string name="tab_text_2">Percussion</string>
+    <string name="tab_text_3">Keys</string>
+
+    <string name="textview">TextView</string>
+    <string name="addButton">Add to Cart</string>
+
+    <string-array name="stringInstruments">
+        <item>Acoustic Guitar</item>
+        <item>Electric Guitar</item>
+        <item>Bass</item>
+        <item>Banjo</item>
+        <item>Violin</item>
+    </string-array>
+
+    <string-array name="stringPrices">
+        <item>€145</item>
+        <item>€229</item>
+        <item>€209</item>
+        <item>€189</item>
+        <item>€355</item>
+    </string-array>
+
+    <string-array name="percussionInstruments">
+        <item>Drum Kit</item>
+        <item>Electric Drums</item>
+        <item>Bongos</item>
+        <item>Tambourine</item>
+        <item>Xylophone</item>
+    </string-array>
+
+    <string-array name="percussionPrices">
+        <item>€345</item>
+        <item>€489</item>
+        <item>€55</item>
+        <item>€25</item>
+        <item>€119</item>
+    </string-array>
+
+    <string-array name="keysInstruments">
+        <item>Keyboard</item>
+        <item>Synthesizer</item>
+        <item>Grand Piano</item>
+        <item>Electric Organ</item>
+        <item>Accordion</item>
+    </string-array>
+
+    <string-array name="keysPrices">
+        <item>€139</item>
+        <item>€265</item>
+        <item>€1,449</item>
+        <item>€569</item>
+        <item>€679</item>
+    </string-array>
+</resources>
