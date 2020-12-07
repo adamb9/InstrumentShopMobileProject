@@ -12,6 +12,10 @@ public class Item_Instrument {
         this.id=id;
     }
 
+    public Item_Instrument(){
+
+    }
+
     public int getInstrumentImage() {
         return instrumentImage;
     }

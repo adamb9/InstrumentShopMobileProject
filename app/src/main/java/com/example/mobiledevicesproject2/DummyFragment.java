@@ -17,14 +17,9 @@ public class DummyFragment extends Fragment {
     int dummyColor;
     RecyclerViewAdapter dummyAdapter;
     ArrayList<Item_Instrument> instrumentObjects;
-    String instruments[];
-    String prices[];
-    int images[];
 
-    public DummyFragment(String instruments[], String prices[], int images[]) {
-        this.instruments = instruments;
-        this.prices = prices;
-        this.images = images;
+    public DummyFragment(ArrayList<Item_Instrument> instrumentObjects) {
+        this.instrumentObjects = instrumentObjects;
     }
 
     @SuppressLint("ValidFragment")
@@ -47,11 +42,6 @@ public class DummyFragment extends Fragment {
         recyclerView.setItemViewCacheSize(20);
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-
-        instrumentObjects = new ArrayList<>();
-        for(int i=0; i<instruments.length;i++) {
-            instrumentObjects.add(new Item_Instrument(images[i], instruments[i], prices[i]));
-        }
 
 
         dummyAdapter = new RecyclerViewAdapter(instrumentObjects, getContext());

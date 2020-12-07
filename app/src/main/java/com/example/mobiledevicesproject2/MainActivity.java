@@ -1,4 +1,5 @@
 package com.example.mobiledevicesproject2;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +17,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -28,29 +33,23 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     TabLayout tabLayout;
 
-    String stringInstruments[];
-    String stringPrices[];
+    private ArrayList<Item_Instrument> stringInstruments = new ArrayList<>();
+    private ArrayList<Item_Instrument> percussionInstruments = new ArrayList<>();
+    private ArrayList<Item_Instrument> keyInstruments = new ArrayList<>();
+
     int stringImages[] = {R.drawable.acousticguitar, R.drawable.electricguitar, R.drawable.bass, R.drawable.banjo, R.drawable.violin} ;
-
-    String percussionInstruments[];
-    String percussionPrices[];
     int percussionImages[] = {R.drawable.drums, R.drawable.electricdrums, R.drawable.bongos, R.drawable.tambourine, R.drawable.xylophone};
-
-    String keyInstruments[];
-    String keyPrices[];
     int keyImages[] = {R.drawable.keyboard, R.drawable.synth, R.drawable.grandpiano, R.drawable.electricorgan, R.drawable.accordion};
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        stringInstruments = getResources().getStringArray(R.array.stringInstruments);
-        stringPrices = getResources().getStringArray(R.array.stringPrices);
-        percussionInstruments = getResources().getStringArray(R.array.percussionInstruments);
-        percussionPrices = getResources().getStringArray(R.array.percussionPrices);
-        keyInstruments = getResources().getStringArray(R.array.keysInstruments);
-        keyPrices = getResources().getStringArray(R.array.keysPrices);
+        loadInstruments("string_inst.json", stringInstruments, stringImages);
+        loadInstruments("percussion_inst.json", percussionInstruments, percussionImages);
+        loadInstruments("key_inst.json", keyInstruments, keyImages);
 
         initToolBar();
         initViewPager();
@@ -78,6 +77,37 @@ public class MainActivity extends AppCompatActivity {
         return json;
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void loadInstruments(String fileName, ArrayList<Item_Instrument> instList, int imageList[])
+    {
+        String myJSONStr = loadJSONFromAsset(fileName);
+        try
+        {
+            //Get root JSON object node
+            JSONObject rootJSONObject = new JSONObject(myJSONStr);
+            //Get employee array node
+            JSONArray instrumentJSONArray = rootJSONObject.getJSONArray("instrument");
+            for (int i = 0; i < instrumentJSONArray.length(); i++)
+            {
+                //Create a temp object of the instrument model class
+                Item_Instrument instrument = new Item_Instrument();
+                //Get employee JSON object node
+                JSONObject jsonObject = instrumentJSONArray.getJSONObject(i);
+                //Get employee details
+                instrument.setName((jsonObject.getString("name")));
+                instrument.setPrice((jsonObject.getString("price")));
+                instrument.setId((jsonObject.getString("id")));
+                instrument.setInstrumentImage(imageList[i]);
+                //Add employee object to the list
+                instList.add(instrument);
+            }
+        } catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     private void initToolBar() {
         toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
@@ -89,9 +119,9 @@ public class MainActivity extends AppCompatActivity {
     private void initViewPager() {
         viewPager = findViewById(R.id.viewpager_home);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new DummyFragment(stringInstruments, stringPrices, stringImages), "String");
-        adapter.addFrag(new DummyFragment(percussionInstruments, percussionPrices, percussionImages), "Percussion");
-        adapter.addFrag(new DummyFragment(keyInstruments, keyPrices, keyImages), "Keys");
+        adapter.addFrag(new DummyFragment(stringInstruments), "String");
+        adapter.addFrag(new DummyFragment(percussionInstruments), "Percussion");
+        adapter.addFrag(new DummyFragment(keyInstruments), "Keys");
         viewPager.setAdapter(adapter);
     }
 
@@ -102,17 +132,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                switch (tab.getPosition()) {
-                    case 0:
-                        toast("1");
-                        break;
-                    case 1:
-                        toast("2");
-                        break;
-                    case 2:
-                        toast("3");
-                        break;
-                }
             }
 
             @Override
@@ -167,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case R.id.action_sign_in:
-                // do your code
+                Intent login = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(login);
                 return true;
             case R.id.action_basket:
                 // do your code
