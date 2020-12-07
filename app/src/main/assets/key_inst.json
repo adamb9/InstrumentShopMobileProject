@@ -1,0 +1,31 @@
+{
+  "keyinstrument":
+  [
+    {
+      "name":"Keyboard",
+      "price": "€139",
+      "id": "K0001"
+    },
+    {
+      "name":"Synthesizer",
+      "price": "€265",
+      "id": "K0002"
+    },
+    {
+      "name":"Grand Piano",
+      "price": "€1,449",
+      "id": "K0003"
+    },
+    {
+      "name":"Electric Organ",
+      "price": "€569",
+      "id": "K0004"
+    },
+    {
+      "name":"Accordion",
+      "price": "€679",
+      "id": "K0005"
+    }
+  ]
+
+}

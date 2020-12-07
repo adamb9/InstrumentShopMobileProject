@@ -34,8 +34,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Item_Instrument instrument = instrumentList.get(position);
 
         holder.instrumentImage.setImageResource(instrument.getInstrumentImage());
-        holder.instrumentName.setText(instrument.getInstrumentName());
-        holder.instrumentPrice.setText(instrument.getInstrumentPrice());
+        holder.instrumentName.setText(instrument.getName());
+        holder.instrumentPrice.setText(instrument.getPrice());
     }
 
     @Override
@@ -51,9 +51,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public DummyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            instrumentImage = itemView.findViewById(R.id.img_dummy);
-            instrumentName = itemView.findViewById(R.id.tv_dummy_title);
-            instrumentPrice = itemView.findViewById(R.id.tv_dummy_subtitle);
+            instrumentImage = itemView.findViewById(R.id.instImage);
+            instrumentName = itemView.findViewById(R.id.instNameTextView);
+            instrumentPrice = itemView.findViewById(R.id.instPriceTextView);
 
         }
     }

@@ -1,0 +1,31 @@
+{
+  "stringinstrument":
+  [
+    {
+      "name":"Acoustic Guitar",
+      "price": "€145",
+      "id": "S0001"
+    },
+    {
+      "name":"Electric Guitar",
+      "price": "€229",
+      "id": "S0002"
+    },
+    {
+      "name":"Bass",
+      "price": "€209",
+      "id": "S0003"
+    },
+    {
+      "name":"Banjo",
+      "price": "€189",
+      "id": "S0004"
+    },
+    {
+      "name":"Violin",
+      "price": "€355",
+      "id": "S0005"
+    }
+  ]
+
+}

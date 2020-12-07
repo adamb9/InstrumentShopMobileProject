@@ -1,0 +1,31 @@
+{
+  "percussioninstrument":
+  [
+    {
+      "name":"Drum Kit",
+      "price": "€345",
+      "id": "P0001"
+    },
+    {
+      "name":"Electric Drums",
+      "price": "€489",
+      "id": "P0002"
+    },
+    {
+      "name":"Bongos",
+      "price": "€55",
+      "id": "P0003"
+    },
+    {
+      "name":"Tambourine",
+      "price": "€29",
+      "id": "P0004"
+    },
+    {
+      "name":"Xylophone",
+      "price": "€119",
+      "id": "P0005"
+    }
+  ]
+
+}

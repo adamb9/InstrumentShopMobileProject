@@ -2,13 +2,14 @@ package com.example.mobiledevicesproject2;
 
 public class Item_Instrument {
     int instrumentImage;
-    String instrumentName;
-    String instrumentPrice;
+    String name;
+    String price;
+    String id;
 
-    public Item_Instrument(int instrumentImage, String instrumentName, String instrumentPrice) {
-        this.instrumentImage = instrumentImage;
-        this.instrumentName = instrumentName;
-        this.instrumentPrice = instrumentPrice;
+    public Item_Instrument(String name, String price, String id) {
+        this.name=name;
+        this.price=price;
+        this.id=id;
     }
 
     public int getInstrumentImage() {
@@ -19,19 +20,27 @@ public class Item_Instrument {
         this.instrumentImage = instrumentImage;
     }
 
-    public String getInstrumentName() {
-        return instrumentName;
+    public String getName() {
+        return name;
     }
 
-    public void setInstrumentName(String instrumentName) {
-        this.instrumentName = instrumentName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getInstrumentPrice() {
-        return instrumentPrice;
+    public String getPrice() {
+        return price;
     }
 
-    public void setInstrumentPrice(String instrumentPrice) {
-        this.instrumentPrice = instrumentPrice;
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
