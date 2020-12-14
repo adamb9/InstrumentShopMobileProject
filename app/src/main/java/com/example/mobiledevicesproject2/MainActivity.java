@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             InputStream is = getAssets().open(fileName);
             int size = is.available();
             byte[] buffer = new byte[size];
-            //noinspection ResultOfMethodCallIgnored
             is.read(buffer);
             is.close();
             json = new String(buffer, StandardCharsets.UTF_8);
@@ -183,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case R.id.action_sign_in:
                 Intent login = new Intent(MainActivity.this, LoginActivity.class);

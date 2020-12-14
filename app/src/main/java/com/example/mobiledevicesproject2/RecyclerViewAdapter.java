@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,6 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         ImageView instrumentImage;
         TextView instrumentName, instrumentPrice, instrumentId;
+        Button cartButton;
 
         public DummyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +58,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             instrumentName = itemView.findViewById(R.id.instNameTextView);
             instrumentPrice = itemView.findViewById(R.id.instPriceTextView);
             instrumentId = itemView.findViewById(R.id.instIDTextView);
+            cartButton = itemView.findViewById(R.id.cartButton);
 
         }
     }
