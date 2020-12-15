@@ -4,7 +4,7 @@
     android:id="@+id/frame_layout_dummy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DummyFragment">
+    tools:context=".home.DummyFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_dummy"

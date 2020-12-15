@@ -1,4 +1,4 @@
-package com.example.mobiledevicesproject2;
+package com.example.mobiledevicesproject2.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mobiledevicesproject2.DBHelper;
+import com.example.mobiledevicesproject2.R;
+import com.example.mobiledevicesproject2.home.MainActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

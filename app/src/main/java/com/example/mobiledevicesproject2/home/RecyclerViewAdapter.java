@@ -1,4 +1,4 @@
-package com.example.mobiledevicesproject2;
+package com.example.mobiledevicesproject2.home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,16 +11,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobiledevicesproject2.Item_Instrument;
+import com.example.mobiledevicesproject2.R;
+
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DummyViewHolder> {
 
+    final private ListItemClickListener mOnClickListener;
     ArrayList<Item_Instrument> instrumentList;
     Context dummyContext;
 
-    public  RecyclerViewAdapter(ArrayList<Item_Instrument> dummyList, Context dummyContext) {
+    public interface ListItemClickListener {
+        void onListItemClick(int position);
+    }
+
+
+    public  RecyclerViewAdapter(ArrayList<Item_Instrument> dummyList, Context dummyContext, ListItemClickListener onClickListener) {
         this.instrumentList = dummyList;
         this.dummyContext = dummyContext;
+        this.mOnClickListener = onClickListener;
     }
 
     @NonNull
@@ -45,7 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return instrumentList.size();
     }
 
-    class DummyViewHolder extends RecyclerView.ViewHolder {
+    class DummyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView instrumentImage;
         TextView instrumentName, instrumentPrice, instrumentId;
@@ -59,7 +69,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             instrumentPrice = itemView.findViewById(R.id.instPriceTextView);
             instrumentId = itemView.findViewById(R.id.instIDTextView);
             cartButton = itemView.findViewById(R.id.cartButton);
+            cartButton.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            mOnClickListener.onListItemClick(position);
         }
     }
 }

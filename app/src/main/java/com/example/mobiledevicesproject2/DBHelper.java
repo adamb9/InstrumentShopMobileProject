@@ -178,4 +178,10 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void clearCart(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from cart");
+        db.close();
+    }
+
 }
