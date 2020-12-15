@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.mobiledevicesproject2.DBHelper;
 import com.example.mobiledevicesproject2.R;
+import com.example.mobiledevicesproject2.cart.ShoppingCartActivity;
 import com.example.mobiledevicesproject2.home.MainActivity;
 
 import java.util.ArrayList;
@@ -79,7 +80,8 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.action_sign_in:
                 return true;
             case R.id.action_basket:
-                // do your code
+                Intent cart = new Intent(LoginActivity.this, ShoppingCartActivity.class);
+                startActivity(cart);
                 return true;
             case R.id.action_home:
                 Intent home = new Intent(LoginActivity.this, MainActivity.class);

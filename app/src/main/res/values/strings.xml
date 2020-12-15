@@ -6,4 +6,11 @@
 
     <string name="textview">TextView</string>
     <string name="addButton">Add to Cart</string>
+
+    <string name="clearCart">Clear Cart</string>
+    <string name="continueShopping">Continue Shopping</string>
+    <string name="payNow">Pay Now</string>
+    <string name="blankTotal">0000</string>
+    <string name="totalPrice">Total Price:  €</string>
+    <string name="removeItem">Remove</string>
 </resources>

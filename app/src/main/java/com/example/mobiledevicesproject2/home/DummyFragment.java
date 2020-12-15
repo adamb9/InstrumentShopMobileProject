@@ -28,8 +28,8 @@ public class DummyFragment extends Fragment implements RecyclerViewAdapter.ListI
     }
 
     @SuppressLint("ValidFragment")
-    public DummyFragment(int color) {
-        this.dummyColor = color;
+    public DummyFragment(int instrument) {
+        this.dummyColor = instrument;
     }
 
     @Override

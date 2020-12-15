@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mobiledevicesproject2.Item_Instrument;
+import com.example.mobiledevicesproject2.cart.ShoppingCartActivity;
 import com.example.mobiledevicesproject2.login.LoginActivity;
 import com.example.mobiledevicesproject2.R;
 import com.google.android.material.tabs.TabLayout;
@@ -190,7 +191,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(login);
                 return true;
             case R.id.action_basket:
-                // do your code
+                Intent cart = new Intent(MainActivity.this, ShoppingCartActivity.class);
+                startActivity(cart);
                 return true;
             case R.id.action_home:
                 // do your code
