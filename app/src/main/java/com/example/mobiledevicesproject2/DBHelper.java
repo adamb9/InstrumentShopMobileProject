@@ -130,7 +130,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get Item Details based on an item code
-    public ArrayList<HashMap<String, String>> getItemByID(int itemid) {
+    public ArrayList<HashMap<String, String>> getItemByID(String itemid) {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> itemList = new ArrayList<>();
         String query = "SELECT name, price FROM " + TABLE_Cart;
@@ -161,7 +161,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Update Cart Item Details
-    public int updateUserDetails(int price, int itemid) {
+    public int updateUserDetails(int price, String itemid) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cVals = new ContentValues();
         cVals.put(KEY_PRICE, price);
@@ -171,7 +171,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Cart Item Details
-    public void DeleteItem(int itemid) {
+    public void DeleteItem(String itemid) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_Cart, KEY_CODE + " = ?", new String[]{String.valueOf(itemid)});
         db.close();
