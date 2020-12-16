@@ -1,3 +1,8 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
+//Instrument item class
 package com.example.mobiledevicesproject2;
 
 public class Item_Instrument {

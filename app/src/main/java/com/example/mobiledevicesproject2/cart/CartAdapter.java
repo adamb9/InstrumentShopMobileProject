@@ -1,3 +1,9 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
+
+//RecyclerView adapter for the shopping cart activity
 package com.example.mobiledevicesproject2.cart;
 
 import android.content.Context;

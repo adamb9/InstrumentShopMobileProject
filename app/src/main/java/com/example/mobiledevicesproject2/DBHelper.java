@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2;
 
 import android.content.ContentValues;

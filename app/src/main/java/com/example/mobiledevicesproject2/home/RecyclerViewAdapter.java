@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2.home;
 
 import android.content.Context;
@@ -16,20 +20,21 @@ import com.example.mobiledevicesproject2.R;
 
 import java.util.ArrayList;
 
+//RecyclerView adapter for the main activity
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DummyViewHolder> {
 
     final private ListItemClickListener mOnClickListener;
     ArrayList<Item_Instrument> instrumentList;
-    Context dummyContext;
+    Context context;
 
     public interface ListItemClickListener {
         void onListItemClick(int position);
     }
 
 
-    public  RecyclerViewAdapter(ArrayList<Item_Instrument> dummyList, Context dummyContext, ListItemClickListener onClickListener) {
+    public  RecyclerViewAdapter(ArrayList<Item_Instrument> dummyList, Context context, ListItemClickListener onClickListener) {
         this.instrumentList = dummyList;
-        this.dummyContext = dummyContext;
+        this.context = context;
         this.mOnClickListener = onClickListener;
     }
 

@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2.login;
 
 import androidx.appcompat.app.AppCompatActivity;

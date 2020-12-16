@@ -7,10 +7,32 @@
     <string name="textview">TextView</string>
     <string name="addButton">Add to Cart</string>
 
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="mmlogin">Music Masters Login</string>
+
     <string name="clearCart">Clear Cart</string>
     <string name="continueShopping">Continue Shopping</string>
     <string name="payNow">Pay Now</string>
     <string name="blankTotal">0000</string>
     <string name="totalPrice">Total Price:  €</string>
     <string name="removeItem">Remove</string>
+
+    <string  name="orderConfirmed">Order Confirmed!</string>
+    <string name="thankYou">Thank you for shopping at Music Masters!</string>
+    <string name="returnHome">Home</string>
+
+    <string name="enterDetails">Enter Your Details Below</string>
+    <string name="shippingDetails">Shipping Information</string>
+    <string name="paymentInformation">Payment Information</string>
+    <string name="add1">Address Line 1</string>
+    <string name="add2">Address Line 2</string>
+    <string name="postcode">Post Code</string>
+
+    <string name="cardNo">Card Number</string>
+    <string name="cardName">Cardholder Name</string>
+    <string name="expDate">Expiry Date</string>
+    <string name="cvv">CVV2</string>
 </resources>

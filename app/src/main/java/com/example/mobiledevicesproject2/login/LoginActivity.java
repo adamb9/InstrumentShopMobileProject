@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2.login;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Login button onClickListener is set to check the database for a username and password that match the inputs
+        //If a correct match is found, a toast message is shown and the user is brought to the main activity
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

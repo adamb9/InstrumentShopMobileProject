@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="2000">
+       <KeyFrameSet>
+           <KeyPosition
+               motion:motionTarget="@+id/imageView7"
+               motion:framePosition="0"
+               motion:keyPositionType="deltaRelative" />
+           <KeyPosition
+               motion:motionTarget="@+id/imageView8"
+               motion:framePosition="0"
+               motion:keyPositionType="deltaRelative" />
+           <KeyPosition
+               motion:motionTarget="@+id/imageView7"
+               motion:framePosition="20"
+               motion:keyPositionType="deltaRelative" />
+           <KeyPosition
+               motion:motionTarget="@+id/imageView8"
+               motion:framePosition="20"
+               motion:keyPositionType="deltaRelative" />
+           <KeyPosition
+               motion:motionTarget="@+id/textView3"
+               motion:framePosition="0"
+               motion:keyPositionType="deltaRelative" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="141dp"
+            android:layout_width="122dp"
+            android:id="@+id/imageView7"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:layout_height="141dp"
+            android:layout_width="125dp"
+            android:id="@+id/imageView8"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView3" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintHorizontal_bias="1.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_marginTop="192dp" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.051"
+            android:layout_height="59dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="109dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:id="@+id/returnToHome" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="141dp"
+            android:layout_width="143dp"
+            android:id="@+id/imageView7"
+            motion:layout_constraintTop_toBottomOf="@+id/textView4"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:layout_height="151dp"
+            motion:layout_editor_absoluteX="280dp"
+            android:layout_width="131dp"
+            android:id="@+id/imageView8"
+            motion:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.051"
+            android:layout_height="59dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="109dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:id="@+id/returnToHome" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:autoTransition="animateToEnd" />
+</MotionScene>

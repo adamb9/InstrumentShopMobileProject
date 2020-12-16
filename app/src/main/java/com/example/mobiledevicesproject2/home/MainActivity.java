@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2.home;
 import android.content.Intent;
 import android.os.Build;
@@ -30,6 +34,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+//The main activity reads data from JSON files which are separated into 3 different categories of instruments.
+//Each type of instrument is added to a list and displayed on a separate tab.
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -86,22 +92,16 @@ public class MainActivity extends AppCompatActivity {
         String myJSONStr = loadJSONFromAsset(fileName);
         try
         {
-            //Get root JSON object node
             JSONObject rootJSONObject = new JSONObject(myJSONStr);
-            //Get employee array node
             JSONArray instrumentJSONArray = rootJSONObject.getJSONArray("instrument");
             for (int i = 0; i < instrumentJSONArray.length(); i++)
             {
-                //Create a temp object of the instrument model class
                 Item_Instrument instrument = new Item_Instrument();
-                //Get employee JSON object node
                 JSONObject jsonObject = instrumentJSONArray.getJSONObject(i);
-                //Get employee details
                 instrument.setName((jsonObject.getString("name")));
                 instrument.setPrice((jsonObject.getString("price")));
                 instrument.setId((jsonObject.getString("id")));
                 instrument.setInstrumentImage(imageList[i]);
-                //Add employee object to the list
                 instList.add(instrument);
             }
         } catch (JSONException e)
@@ -114,8 +114,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setTitle(R.string.app_name);
-        // For back navigation button use this
-        // if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initViewPager() {

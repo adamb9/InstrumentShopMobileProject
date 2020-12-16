@@ -1,3 +1,7 @@
+//Adam Baldwin
+//R00176025
+//SDH3A
+
 package com.example.mobiledevicesproject2.home;
 
 import android.annotation.SuppressLint;
@@ -19,7 +23,7 @@ import com.example.mobiledevicesproject2.R;
 import java.util.ArrayList;
 
 public class DummyFragment extends Fragment implements RecyclerViewAdapter.ListItemClickListener {
-    int dummyColor;
+
     RecyclerViewAdapter dummyAdapter;
     ArrayList<Item_Instrument> instrumentObjects;
 
@@ -27,19 +31,11 @@ public class DummyFragment extends Fragment implements RecyclerViewAdapter.ListI
         this.instrumentObjects = instrumentObjects;
     }
 
-    @SuppressLint("ValidFragment")
-    public DummyFragment(int instrument) {
-        this.dummyColor = instrument;
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dummy, container, false);
-
-        final FrameLayout frameLayout = view.findViewById(R.id.frame_layout_dummy);
-        frameLayout.setBackgroundColor(dummyColor);
-
-
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_dummy);
 
@@ -57,9 +53,10 @@ public class DummyFragment extends Fragment implements RecyclerViewAdapter.ListI
         return view;
     }
 
+    //Button to add items to cart
     @Override
     public void onListItemClick(int position) {
-        Toast.makeText(getContext(), instrumentObjects.get(position).getName(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), instrumentObjects.get(position).getName(), Toast.LENGTH_SHORT).show();
         DBHelper db = new DBHelper(getContext());
         int price = Integer.parseInt(instrumentObjects.get(position).getPrice().substring(1));
         String name = instrumentObjects.get(position).getName();
